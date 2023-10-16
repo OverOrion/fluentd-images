@@ -1,31 +1,31 @@
 source 'https://rubygems.org'
 
 # OUTPUTS
-gem 'gelf', '3.1.0' #output
-gem 'snappy', '0.3.0' #output
-gem 'fluent-plugin-s3', '1.7.2' #output
+# gem 'gelf', '3.1.0' #output
+# gem 'snappy', '0.3.0' #output
+# gem 'fluent-plugin-s3', '1.7.2' #output
 # gem 'fluent-plugin-azure-storage-append-blob', '0.2.1' #output, azurestore
-gem 'yajl-ruby', '1.4.3' #CloudWatchOutput
-gem 'oj', '3.16.1'#	// With default behavior, OpenSearch client uses Yajl as JSON encoder/decoder. Oj is the alternative high performance JSON encoder/decoder. When this parameter sets as true, OpenSearch client uses Oj as JSON encoder/decoder.
-gem 'fluent-plugin-aliyun-oss', '0.0.1'#output, OSSOutput
-gem 'fluent-plugin-sumologic_output', '1.8.0' #output?
-gem 'fluent-plugin-kafka', '0.19.1' #output?
-gem 'fluent-plugin-grafana-loki', '1.2.20' #output
-gem 'fluent-plugin-kinesis', '3.4.2' #output
-gem 'fluent-plugin-splunk-hec', '1.3.3' #output?
-gem 'fluent-plugin-elasticsearch', '5.3.0'# output?
-gem 'fluent-plugin-newrelic', '1.2.2' #output
-gem 'fluent-plugin-cloudwatch-logs', '0.14.3' #output
-gem 'fluent-plugin-opensearch', '1.1.4' #output
-gem 'fluent-plugin-logzio', '0.2.2' #output
-# gem 'fluent-plugin-logdna', '~> 0.4.0' #output
-gem 'fluent-plugin-datadog', '0.14.2' #output
-gem 'fluent-plugin-redis', '0.3.5' #output
-gem 'fluent-plugin-gelf-hs', '1.0.8' #output
-gem 'fluent-plugin-sqs', '3.0.0' #output
-gem 'fluent-plugin-mattermost', '0.2.2' #output
-gem 'fluent-plugin-syslog_rfc5424', :git => 'https://github.com/acquia/fluent-plugin-syslog_rfc5424.git', :tag => '0.2.1' #output
-gem 'fluent-plugin-gcs', :git => 'https://github.com/kube-logging/fluent-plugin-gcs.git', :branch => 'master' #output
+# gem 'yajl-ruby', '1.4.3' #CloudWatchOutput
+# gem 'oj', '3.16.1'#	// With default behavior, OpenSearch client uses Yajl as JSON encoder/decoder. Oj is the alternative high performance JSON encoder/decoder. When this parameter sets as true, OpenSearch client uses Oj as JSON encoder/decoder.
+# gem 'fluent-plugin-aliyun-oss', '0.0.1'#output, OSSOutput
+# gem 'fluent-plugin-sumologic_output', '1.8.0' #output?
+# gem 'fluent-plugin-kafka', '0.19.1' #output?
+# gem 'fluent-plugin-grafana-loki', '1.2.20' #output
+# gem 'fluent-plugin-kinesis', '3.4.2' #output
+# gem 'fluent-plugin-splunk-hec', '1.3.3' #output?
+# gem 'fluent-plugin-elasticsearch', '5.3.0'# output?
+# gem 'fluent-plugin-newrelic', '1.2.2' #output
+# gem 'fluent-plugin-cloudwatch-logs', '0.14.3' #output
+# gem 'fluent-plugin-opensearch', '1.1.4' #output
+# gem 'fluent-plugin-logzio', '0.2.2' #output
+# # gem 'fluent-plugin-logdna', '~> 0.4.0' #output
+# gem 'fluent-plugin-datadog', '0.14.2' #output
+# gem 'fluent-plugin-redis', '0.3.5' #output
+# gem 'fluent-plugin-gelf-hs', '1.0.8' #output
+# gem 'fluent-plugin-sqs', '3.0.0' #output
+# gem 'fluent-plugin-mattermost', '0.2.2' #output
+# gem 'fluent-plugin-syslog_rfc5424', :git => 'https://github.com/acquia/fluent-plugin-syslog_rfc5424.git', :tag => '0.2.1' #output
+# gem 'fluent-plugin-gcs', :git => 'https://github.com/kube-logging/fluent-plugin-gcs.git', :branch => 'master' #output
 
 # # FILTERS
 # gem 'fluent-plugin-detect-exceptions', '0.0.15' # filter
