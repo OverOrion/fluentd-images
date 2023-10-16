@@ -41,10 +41,10 @@ source 'https://rubygems.org'
 # gem 'fluent-plugin-enhance-k8s-metadata', :git => 'https://github.com/SumoLogic/sumologic-kubernetes-fluentd.git', :tag => 'v1.16.2-sumo-0', :glob => 'fluent-plugin-enhance-k8s-metadata/*.gemspec' #filter
 
 # UNKNOWNS
-gem 'elasticsearch', '8.10.0'
-gem 'elasticsearch-xpack', '7.17.9'
-gem 'activesupport', '6.1.7.5'
-gem 'http_parser.rb', '0.8.0'
+# gem 'elasticsearch', '8.10.0'
+# gem 'elasticsearch-xpack', '7.17.9'
+# gem 'activesupport', '6.1.7.5'
+# gem 'http_parser.rb', '0.8.0'
 gem 'tzinfo', '>= 1.2.11'
 gem 'resolv', '0.2.2'
 gem 'json', '2.6.3'
@@ -55,17 +55,17 @@ gem 'prometheus-client', '4.2.1'
 gem 'bigdecimal', '3.1.4'
 gem 'webrick', '1.8.1'
 
-gem 'fluent-plugin-remote-syslog', '1.1.0'
-gem 'fluent-plugin-webhdfs', '1.5.0'
-gem 'fluent-plugin-rewrite-tag-filter', '2.4.0'
-gem 'fluent-plugin-multi-format-parser', '1.0.0'
-
+# gem 'fluent-plugin-remote-syslog', '1.1.0'
+# gem 'fluent-plugin-webhdfs', '1.5.0'
+# gem 'fluent-plugin-rewrite-tag-filter', '2.4.0'
+# gem 'fluent-plugin-multi-format-parser', '1.0.0'
+# 
 # gem 'fluent-plugin-aws-elasticsearch-service', '2.4.1'
-gem 'fluent-plugin-grok-parser', '2.6.2'
-
-gem 'fluent-plugin-vmware-loginsight', '1.4.1'
-gem 'fluent-plugin-vmware-log-intelligence', '2.0.8'
-gem 'fluent-plugin-mysqlslowquery', '0.0.9'
+# gem 'fluent-plugin-grok-parser', '2.6.2'
+# 
+# gem 'fluent-plugin-vmware-loginsight', '1.4.1'
+# gem 'fluent-plugin-vmware-log-intelligence', '2.0.8'
+# gem 'fluent-plugin-mysqlslowquery', '0.0.9'
 
 gem 'fluent-plugin-label-router', :git => 'https://github.com/kube-logging/fluent-plugin-label-router.git', :ref => '2ff43789f895735b7852e0a1a809280e22d9e8ef' #router
 gem 'fluent-plugin-kubernetes-metadata-filter', :git => 'https://github.com/SumoLogic/sumologic-kubernetes-fluentd.git', :tag => 'v1.16.2-sumo-0', :glob => 'fluent-plugin-kubernetes-metadata-filter/*.gemspec'
