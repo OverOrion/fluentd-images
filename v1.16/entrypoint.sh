@@ -17,12 +17,15 @@ fi
 # If user does not supply config file or plugins, use the default
 if [ "$1" = "fluentd" ]; then
     if ! echo $@ | grep ' \-c' ; then
+        echo first 
        set -- "$@" -c /fluentd/etc/${FLUENTD_CONF}
     fi
 
     if ! echo $@ | grep ' \-p' ; then
+       echo second
        set -- "$@" -p /fluentd/plugins
     fi
 fi
 
+echo cmd_is: "$@" 
 exec "$@"
