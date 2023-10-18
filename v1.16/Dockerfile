@@ -1,13 +1,14 @@
-### Very base image
-FROM alpine:3.18 AS base
-ENV FLUENTD_VERSION 1.16.2
-ENV BUILD_DEPS = " \
+ARG BUILD_DEPS=" \
       make gcc g++ libc-dev \
       wget bzip2 zlib-dev git linux-headers \
       automake autoconf libtool build-base \
       ruby-dev libc6-compat geoip-dev \
       snappy-dev \
-      " \
+      "
+### Very base image
+FROM alpine:3.18 AS base
+ENV FLUENTD_VERSION 1.16.2
+ARG BUILD_DEPS
 # Do not split this into multiple RUN!
 # Docker creates a layer for every RUN-Statement
 # therefore an 'apk delete' has no effect
@@ -47,18 +48,14 @@ ENV FLUENTD_CONF="fluent.conf"
 
 ENV LD_PRELOAD=""
 EXPOSE 24224 5140
-
 USER fluent
-
-ENTRYPOINT ["tini",  "--", "/bin/entrypoint.sh"]
-CMD ["fluentd"]
-
  
 ### Minimal image
 FROM base AS minimal
 ADD ./Gemfile /Gemfile
 ADD ./Gemfile.lock /Gemfile.lock
-
+ARG BUILD_DEPS
+USER root
 # Do not split this into multiple RUN!
 # Docker creates a layer for every RUN-Statement
 # therefore an 'apk delete' has no effect
@@ -78,13 +75,15 @@ RUN apk update \
  && gem specific_install https://github.com/abonas/kubeclient --ref 6b40464cd71e2789ea6de94f618f793a8db9ac49 \
  && gem specific_install -l https://github.com/banzaicloud/fluent-plugin-gcs.git --ref 9fbff74734ddce289f9a10734a338b3c7f0065b5 \
  && gem specific_install -l https://github.com/acquia/fluent-plugin-syslog_rfc5424.git --ref 5199be67d1a385f529fa1d6b6023e95ba7fac27d \
- && apk del .build-deps $buildDeps \
+ && apk del .build-deps $BUILD_DEPS \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem /usr/lib/ruby/gems/3.*/gems/fluentd-*/test
 
+USER fluent
 
 ### Full image
 FROM minimal as full
-
+ARG BUILD_DEPS
+USER root
 # Do not split this into multiple RUN!
 # Docker creates a layer for every RUN-Statement
 # therefore an 'apk delete' has no effect
@@ -104,3 +103,9 @@ RUN apk update \
  && gem install bundler && bundle install \ 
  && apk del .build-deps $BUILD_DEPS \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem /usr/lib/ruby/gems/3.*/gems/fluentd-*/test
+
+
+USER fluent
+
+ENTRYPOINT ["tini",  "--", "/bin/entrypoint.sh"]
+CMD ["fluentd"]
