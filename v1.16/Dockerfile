@@ -72,7 +72,6 @@ RUN apk update \
         build-base \
         ruby-dev gnupg \
  && apk add $BUILD_DEPS \
- #&& gem install bundler && bundle install \
  && gem specific_install -l https://github.com/SumoLogic/sumologic-kubernetes-fluentd.git --ref 3a5a2e29e3776107a1bf0c9435de5cc2b14fc7f6 -d fluent-plugin-kubernetes-metadata-filter \
  && gem specific_install -l https://github.com/SumoLogic/sumologic-kubernetes-fluentd.git --ref 3a5a2e29e3776107a1bf0c9435de5cc2b14fc7f6 -d fluent-plugin-enhance-k8s-metadata \
  && gem specific_install -l https://github.com/SumoLogic/sumologic-kubernetes-fluentd.git --ref 3a5a2e29e3776107a1bf0c9435de5cc2b14fc7f6 -d fluent-plugin-kubernetes-sumologic \
