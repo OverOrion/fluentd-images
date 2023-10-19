@@ -54,7 +54,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: false
-          tags: ${{ steps.meta.outputs.tags }},type=raw,value=${{ matrix.fluentd }}-base
+          tags: ${{ steps.meta.outputs.tags }},${{ matrix.fluentd }}-base
           labels: ${{ steps.meta.outputs.labels }}
           target: base
       
@@ -65,7 +65,7 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: false
-          tags: ${{ steps.meta.outputs.tags }},type=raw,value=${{ matrix.fluentd }}-minimal
+          tags: ${{ steps.meta.outputs.tags }},${{ matrix.fluentd }}-minimal
           labels: ${{ steps.meta.outputs.labels }}
           target: minimal
 
@@ -76,6 +76,6 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: false
-          tags: ${{ steps.meta.outputs.tags }},type=raw,value=${{ matrix.fluentd }}-full
+          tags: ${{ steps.meta.outputs.tags }},${{ matrix.fluentd }}-full
           labels: ${{ steps.meta.outputs.labels }}
           target: full
