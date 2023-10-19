@@ -37,7 +37,6 @@ jobs:
           flavor: |
             latest = false
           tags: |
-            type=raw,value=${{ matrix.fluentd }}-build.${{ github.run_number }}
             type=raw,value=${{ matrix.fluentd }}-${{ matrix.image-type }}
 
       - name: Set up QEMU
@@ -72,7 +71,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.12.0
         with:
-          image-ref: "ghcr.io/${{ github.repository_owner }}/fluentd:${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.version'] }}-${{ matrix.image-type }}"
+          image-ref: "ghcr.io/${{ github.repository_owner }}/fluentd:${{ fromJSON(steps.meta.outputs.json).labels['org.opencontainers.image.version'] }}"
           format: "sarif"
           output: "trivy-results.sarif"
         if: github.event_name == 'push'
