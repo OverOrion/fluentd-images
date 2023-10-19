@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'gelf', '3.1.0' #output
 gem 'snappy', '0.3.0' #output
 gem 'fluent-plugin-s3', '1.7.2' #output
-gem 'fluent-plugin-azure-storage-append-blob', '0.2.1' #output, azurestore
+# gem 'fluent-plugin-azure-storage-append-blob', '0.2.1' #output, azurestore
 #gem 'yajl-ruby', '1.4.3' #CloudWatchOutput
 #gem 'oj', '3.16.1'#	// With default behavior, OpenSearch client uses Yajl as JSON encoder/decoder. Oj is the alternative high performance JSON encoder/decoder. When this parameter sets as true, OpenSearch client uses Oj as JSON encoder/decoder.
 gem 'fluent-plugin-aliyun-oss', '0.0.1'#output, OSSOutput
