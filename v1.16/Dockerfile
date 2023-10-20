@@ -53,20 +53,11 @@ USER root
 # Docker creates a layer for every RUN-Statement
 # therefore an 'apk delete' has no effect
 RUN apk update \
- && apk add --no-cache \
-        ca-certificates \
-        ruby ruby-irb ruby-etc \
-        tini libmaxminddb geoip \
-        snappy \
  && apk add --no-cache --virtual .build-deps \
         build-base \
         ruby-dev gnupg \
  && apk add $BUILD_DEPS \
- && gem install async:1.30.3 \
- && gem specific_install --debug --backtrace --verbose -l https://github.com/SumoLogic/sumologic-kubernetes-fluentd.git --ref 0bf48d864491de5f167fe9ca8bfe70afcc54535f -d fluent-plugin-kubernetes-metadata-filter \
- && gem specific_install --debug --backtrace --verbose -l https://github.com/SumoLogic/sumologic-kubernetes-fluentd.git --ref 0bf48d864491de5f167fe9ca8bfe70afcc54535f -d fluent-plugin-enhance-k8s-metadata \
- && gem specific_install --debug --backtrace --verbose -l https://github.com/SumoLogic/sumologic-kubernetes-fluentd.git --ref 0bf48d864491de5f167fe9ca8bfe70afcc54535f -d fluent-plugin-kubernetes-sumologic \
- && gem specific_install --debug --backtrace --verbose https://github.com/abonas/kubeclient --ref 6b40464cd71e2789ea6de94f618f793a8db9ac49 \
+ && gem specific_install --debug --backtrace --verbose https://github.com/ManageIQ/kubeclient --ref 054bff2c5e31a555004be2b3c4d32fb9dc5e6a0f \
  && gem specific_install --debug --backtrace --verbose -l https://github.com/banzaicloud/fluent-plugin-gcs.git --ref 9fbff74734ddce289f9a10734a338b3c7f0065b5 \
  && gem specific_install --debug --backtrace --verbose -l https://github.com/acquia/fluent-plugin-syslog_rfc5424.git --ref 5199be67d1a385f529fa1d6b6023e95ba7fac27d \
  && apk del .build-deps $BUILD_DEPS \
