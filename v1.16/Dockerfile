@@ -26,7 +26,6 @@ RUN apk update \
  # The only required fluentd dependency is the label router
  && gem install specific_install -v 0.3.8 \
  && gem specific_install -l https://github.com/kube-logging/fluent-plugin-label-router.git --ref 2ff43789f895735b7852e0a1a809280e22d9e8ef \
- && apk del .build-deps $BUILD_DEPS \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem /usr/lib/ruby/gems/3.*/gems/fluentd-*/test
  
 
@@ -55,7 +54,6 @@ RUN apk update \
  && gem specific_install --debug --backtrace --verbose https://github.com/ManageIQ/kubeclient --ref 054bff2c5e31a555004be2b3c4d32fb9dc5e6a0f \
  && gem specific_install --debug --backtrace --verbose -l https://github.com/banzaicloud/fluent-plugin-gcs.git --ref 9fbff74734ddce289f9a10734a338b3c7f0065b5 \
  && gem specific_install --debug --backtrace --verbose -l https://github.com/acquia/fluent-plugin-syslog_rfc5424.git --ref 5199be67d1a385f529fa1d6b6023e95ba7fac27d \
- && apk del .build-deps $BUILD_DEPS \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem /usr/lib/ruby/gems/3.*/gems/fluentd-*/test
 
 USER fluent
