@@ -47,7 +47,6 @@ USER fluent
 ### Minimal image, filters only
 FROM base AS minimal
 ADD ./Gemfile /Gemfile
-ADD ./Gemfile.lock /Gemfile.lock
 USER root
 # Do not split this into multiple RUN!
 # Docker creates a layer for every RUN-Statement
@@ -75,8 +74,8 @@ RUN apk update \
  && gem specific_install -l https://github.com/kube-logging/fluent-plugin-gcs.git --ref 71a0932e75509545a2d28e337642ee1f973cca90 \
  && gem specific_install -l https://github.com/acquia/fluent-plugin-syslog_rfc5424.git --ref 5199be67d1a385f529fa1d6b6023e95ba7fac27d \
  && fluent-gem install --file /Gemfile \ 
- && fluent-gem install --file /output_aws_elasticsearch_service.gemfile --lock\
- && fluent-gem install --file /output_logdna.gemfile --lock \
+ && fluent-gem install --file /output_aws_elasticsearch_service.gemfile\
+ && fluent-gem install --file /output_logdna.gemfile \
  && apk del .build-deps $BUILD_DEPS \
  && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem /usr/lib/ruby/gems/3.*/gems/fluentd-*/test
 
