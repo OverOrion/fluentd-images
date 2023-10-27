@@ -14,5 +14,8 @@
             "matchUpdateTypes": ["major"],
             "enabled": false
         }
-    ]
+    ],
+    "bundler": {
+        "fileMatch": ["Gemfile.filters", "Gemfile.outputs"]
+      }
 }
