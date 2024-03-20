@@ -13,7 +13,7 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
-    addressable (2.8.5)
+    addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     aes_key_wrap (1.1.0)
     aliyun-sdk (0.7.0)
@@ -160,10 +160,10 @@ GEM
       myslog (~> 0.0)
     fluent-plugin-vmware-loginsight (1.4.2)
       fluentd (>= 0.14.10, < 2)
-    fluent-plugin-webhdfs (1.5.0)
+    fluent-plugin-webhdfs (1.6.0)
       fluentd (>= 0.14.22)
-      webhdfs (>= 0.10.0)
-    fluentd (1.16.3)
+      webhdfs (>= 0.11.0)
+    fluentd (1.16.4)
       bundler
       cool.io (>= 1.4.5, < 2.0.0)
       http_parser.rb (>= 0.5.1, < 0.9.0)
@@ -246,7 +246,7 @@ GEM
       faraday (>= 1.0, < 3)
       multi_json (>= 1.0)
     prometheus-client (4.2.1)
-    public_suffix (5.0.3)
+    public_suffix (5.0.4)
     racc (1.7.1)
     rack (3.0.8)
     rack-oauth2 (1.21.3)
@@ -294,7 +294,7 @@ GEM
       activesupport
       faraday (~> 2.0)
       faraday-follow_redirects
-    webhdfs (0.10.2)
+    webhdfs (0.11.0)
       addressable
     webrick (1.8.1)
     yajl-ruby (1.4.3)
@@ -322,7 +322,7 @@ DEPENDENCIES
   fluent-plugin-sumologic_output (= 1.9.0)
   fluent-plugin-vmware-log-intelligence (= 2.0.8)
   fluent-plugin-vmware-loginsight (= 1.4.2)
-  fluent-plugin-webhdfs (= 1.5.0)
+  fluent-plugin-webhdfs (= 1.6.0)
 
 BUNDLED WITH
    2.4.21
