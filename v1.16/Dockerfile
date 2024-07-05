@@ -1,4 +1,4 @@
-FROM public.ecr.aws/sumologic/kubernetes-fluentd:latest-alpine@sha256:23f6ab7e7bb89d25e950770d2729d1628bd0618693e5fdee2382760254a48ecb AS sumo
+FROM public.ecr.aws/sumologic/kubernetes-fluentd:latest-alpine@sha256:dc65b35632c35168ae181a8886dd0269ca80e4bdda852b63081ba110538f3dc3 AS sumo
 
 # Adapted from https://github.com/SumoLogic/sumologic-kubernetes-fluentd/blob/main/alpine.Dockerfile#L102C1-L142C16
 FROM ruby:3.3.3-alpine3.19 as base
