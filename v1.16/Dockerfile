@@ -1,7 +1,7 @@
 FROM public.ecr.aws/sumologic/kubernetes-fluentd:latest-alpine@sha256:dc65b35632c35168ae181a8886dd0269ca80e4bdda852b63081ba110538f3dc3 AS sumo
 
 # Adapted from https://github.com/SumoLogic/sumologic-kubernetes-fluentd/blob/main/alpine.Dockerfile#L102C1-L142C16
-FROM ruby:3.3.4-alpine3.19 as base
+FROM ruby:3.3.5-alpine3.19 as base
 
 ARG BUILD_DEPS=" \
       make gcc g++ libc-dev \
